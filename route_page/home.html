@@ -1,0 +1,219 @@
+<div ng-controller = "homeCtrl">
+	<div class = "spinner" ng-if = "isLoading" >
+		<div class = "bounce1" ></div >
+		<div class = "bounce2" ></div >
+		<div class = "bounce3" ></div >
+	</div >
+	<!--轮播图-->
+	<div class = "slide-show" ng-if="!isLoading">
+		<div class = "slide-img" >
+			<ul >
+				<li ng-class = "{'active' : slide.slide_num === $index}" ng-repeat="val in slide.slide_imgs" style="background-image: url({{val.url}});"><a href = "#" ></a ></li >
+			</ul >
+		</div >
+		<div class = "slide-point" >
+			<ul class = "points" >
+				<li ng-class = "{'active' : slide.slide_num === $index}" ng-repeat="val in slide.slide_imgs" ng-click="slide.showTo($index)" ></li >
+			</ul >
+		</div >
+		<div class = "slide-guide" >
+			<div class = "guide guide-left" ng-click="slide.prev()">
+				<
+			</div >
+			<div class = "guide guide-right" ng-click="slide.next()">
+				>
+			</div >
+		</div >
+	</div >
+	
+	<!--电影列表-->
+	<div class = "movie-main container clearfix" >
+		<div class = "container-left" >
+			
+			<!--正在热映-->
+			<div class = "movies movie-now" ng-if = "now_list" >
+				<h4 class = "title" >
+					正在热映（<span ng-bind = "now_list.total" ></span >部）
+					<a href = "#" >
+							<span class = "more" >
+							全部>
+							</span >
+					</a >
+				</h4 >
+				<ul class = "clearfix" >
+					<li ng-repeat = "val in now_list.subjects | limitTo : 8" >
+						<div >
+							<a href = "#" >
+								<div class = "img" >
+									<img src = "{{val.images.large}}" alt = "{{val.alt}}" >
+								</div >
+								<div class = "info" >
+									<div class = "clearfix" >
+										<div ng-bind = "val.title" class = "name fl" ></div >
+										<div class = "average fr" >
+											<i class = "integer" >{{val.rating.average | limitTo : 1}}.</i >
+											<i class = "float" >{{val.rating.average | limitTo : -1}}</i >
+										</div >
+									</div >
+								</div >
+							</a >
+							<a href = "#" >
+								<div class = "buy" >购票</div >
+							</a >
+						</div >
+					</li >
+				</ul >
+			</div >
+			
+			<!--即将上映-->
+			<div class = "movies movie-coming" ng-if = "coming_list" >
+				<h4 class = "title" >
+					即将上映（<span ng-bind = "coming_list.total" ></span >部）
+					<a href = "#" >
+							<span class = "more" >
+							全部>
+							</span >
+					</a >
+				</h4 >
+				<ul class = "clearfix" >
+					<li ng-repeat = "val in coming_list.subjects | limitTo : 8" >
+						<div >
+							<a href = "#" >
+								<div class = "img" >
+									<img src = "{{val.images.large}}" alt = "{{val.alt}}" >
+								</div >
+								<div class = "info" >
+									<div class = "clearfix" >
+										<div ng-bind = "val.title" class = "name fl" ></div >
+										<div class = "average fr" >
+											<i class = "integer" >{{val.rating.average | limitTo : 1}}.</i >
+											<i class = "float" >{{val.rating.average | limitTo : -1}}</i >
+										</div >
+									</div >
+								</div >
+							</a >
+							<div class = "buy clearfix" >
+								<div class = "expect" >
+									{{val.collect_count}}人想看
+								</div >
+								<div class = "presell" >
+									<div >预告片</div >
+									<div >
+										<a href = "#" >预售</a >
+									</div >
+								</div >
+							</div >
+						</div >
+						<p class = "time" >{{val.year}}年上映</p >
+					</li >
+				</ul >
+			</div >
+			<div class = "movies movie-hot" ng-if = "hot_list" >
+				<h4 class = "title" >
+					高分电影（<span ng-bind = "hot_list.total" ></span >部）
+					<span class = "classify" >
+							<a href = "#" >爱情</a >
+							<a href = "#" >喜剧</a >
+							<a href = "#" >动作</a >
+							<a href = "#" >恐怖</a >
+							<a href = "#" >漫画</a >
+						</span >
+					<a href = "#" class = "more" >
+							<span >
+							全部>
+							</span >
+					</a >
+				</h4 >
+				<ul class = "clearfix" >
+					<li ng-repeat = "val in hot_list.subjects | limitTo : 8" >
+						<div >
+							<a href = "#" >
+								<div class = "img" >
+									<img src = "{{val.images.large}}" alt = "{{val.alt}}" >
+								</div >
+								<div class = "info" >
+									<div class = "clearfix" >
+										<div ng-bind = "val.title" class = "name fl" ></div >
+										<div class = "average fr" >
+											<i class = "integer" >{{val.rating.average | limitTo : 1}}.</i >
+											<i class = "float" >{{val.rating.average | limitTo : -1}}</i >
+										</div >
+									</div >
+								</div >
+							</a >
+						</div >
+					</li >
+				</ul >
+			</div >
+		</div >
+		
+		
+		<div class = "container-right" >
+			<div class = "rinking rinking-money" ng-if = "now_list" >
+				<h4 class = "title" >
+					今日票房
+					<a href = "#" class = "more" >
+						查看更多 >
+					</a >
+				</h4 >
+				<ul class = "list-10" >
+					<img src = "{{now_list.subjects[0].images.small}}" alt = "{{now_list.subjects[0].alt}}" >
+					<i class = "champion" ></i >
+					<li ng-repeat = "val in now_list.subjects | limitTo : 10" >
+						<a href = "#" >
+							<div class = "info" >
+								<i class = "number" ng-bind = "$index + 1" ></i >
+								<span class = "name" ng-bind = "val.title" ></span >
+								<span class = "point" ng-bind = "val.rating.average" ></span >
+							</div >
+						</a >
+					</li >
+				</ul >
+			</div >
+			<div class = "rinking rinking-expect" ng-if = "coming_list" >
+				<h4 class = "title" >
+					最受期待
+					<a href = "#" class = "more" >
+						查看更多 >
+					</a >
+				</h4 >
+				<ul class = "list-10" >
+					<img src = "{{coming_list.subjects[0].images.small}}" alt = "{{coming_list.subjects[0].alt}}" >
+					<i class = "champion" ></i >
+					<li ng-repeat = "val in coming_list.subjects | limitTo : 10" >
+						<a href = "#" >
+							<div class = "info" >
+								<i class = "number" ng-bind = "$index + 1" ></i >
+								<span class = "name" ng-bind = "val.title" ></span >
+								<span class = "point" ng-bind = "val.rating.average" ></span >
+							</div >
+						</a >
+					</li >
+				</ul >
+			</div >
+			<div class = "rinking rinking-top" ng-if = "hot_list" >
+				<h4 class = "title" >
+					TOP 250
+					<a href = "#" class = "more" >
+						查看更多 >
+					</a >
+				</h4 >
+				<ul class = "list-10" >
+					<img src = "{{hot_list.subjects[0].images.small}}" alt = "{{hot_list.subjects[0].alt}}" >
+					<i class = "champion" ></i >
+					<li ng-repeat = "val in hot_list.subjects | limitTo : 10" >
+						<a href = "#" >
+							<div class = "info" >
+								<i class = "number" ng-bind = "$index + 1" ></i >
+								<span class = "name" ng-bind = "val.title" ></span >
+								<span class = "point" ng-bind = "val.rating.average" ></span >
+							</div >
+						</a >
+					</li >
+				</ul >
+			</div >
+		</div >
+	</div >
+</div >
+		
+

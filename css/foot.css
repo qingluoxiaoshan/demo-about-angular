@@ -1,0 +1,20 @@
+#footer {
+  padding: 56px 0;
+  background-color: #262426;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+#footer p a {
+  font-size: 16px;
+  color: #666;
+}
+#footer p a:hover {
+  color: #666666;
+}
+#footer p:first-child a {
+  color: red;
+}
+#footer p:first-child a:hover {
+  text-decoration: underline;
+}

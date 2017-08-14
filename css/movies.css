@@ -1,0 +1,121 @@
+#movies-nav {
+  background-color: #47464a;
+}
+#movies-nav .movies-classify {
+  width: 432px;
+  height: 60px;
+  margin: 0 auto;
+}
+#movies-nav .movies-classify li {
+  float: left;
+}
+#movies-nav .movies-classify li a {
+  display: block;
+  width: 144px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+}
+#movies-nav .movies-classify li.active {
+  position: relative;
+}
+#movies-nav .movies-classify li.active a {
+  color: #ef4238;
+  cursor: default;
+}
+#movies-nav .movies-classify li.active::after {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+  bottom: 0;
+  left: 62px;
+}
+#movies-main {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+#movies-main .total-classify {
+  position: relative;
+  padding: 0 20px;
+  border: 1px solid #e5e5e5;
+}
+#movies-main .total-classify .options {
+  padding: 5px 0;
+}
+#movies-main .total-classify .options .options-left {
+  float: left;
+  color: #999;
+  font-size: 14px;
+  line-height: 37px;
+}
+#movies-main .total-classify .options .options-right {
+  margin-left: 40px;
+}
+#movies-main .total-classify .options .options-right ul li {
+  float: left;
+  height: 37px;
+  margin: 0 5px;
+  padding-top: 5px;
+}
+#movies-main .total-classify .options .options-right ul li a {
+  display: block;
+  color: #333333;
+  font-size: 14px;
+  padding: 0 10px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+}
+#movies-main .total-classify .options .options-right ul li a.active {
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  color: #fff;
+  background-color: #ef4238;
+}
+#movies-main .total-classify div.options + div.options {
+  border-top: 1px dashed #e5e5e5;
+}
+#movies-main .movies-lists .movies {
+  margin-top: 40px;
+}
+#movies-main .movies-lists .movies ul li {
+  float: left;
+  margin: 20px;
+  width: 160px;
+}
+#movies-main .movies-lists .movies ul li > a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #efefef;
+}
+#movies-main .movies-lists .movies ul li > a .img {
+  text-align: center;
+}
+#movies-main .movies-lists .movies ul li > a .img img {
+  width: 160px;
+  height: 220px;
+  vertical-align: top;
+}
+#movies-main .movies-lists .movies ul li .info {
+  width: 100%;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 10px;
+}
+#movies-main .movies-lists .movies ul li .info .name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#movies-main .movies-lists .movies ul li .info .average {
+  color: #ffb400;
+  font-size: 16px;
+}
+#movies-main .movies-lists .movies ul li:hover {
+  -webkit-box-shadow: 0 0 8px #fff, 0 5px 13px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 8px #fff, 0 5px 13px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px #fff, 0 5px 13px rgba(0, 0, 0, 0.1);
+}

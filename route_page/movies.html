@@ -1,0 +1,92 @@
+<div ng-controller = "moviesCtrl" >
+	
+	<nav id = "movies-nav" >
+		<section class = "container" >
+			<ul class = "movies-classify" >
+				<li ng-class = "{'active' : linkIndex === 1}" >
+					<a href = "javascript:void(0);" ng-click = "linkTo(1)" >正在热映</a >
+				</li >
+				<li ng-class = "{'active' : linkIndex === 2}" >
+					<a href = "javascript:void(0);" ng-click = "linkTo(2)" >即将上映</a >
+				</li >
+				<li ng-class = "{'active' : linkIndex === 3}" >
+					<a href = "javascript:void(0);" ng-click = "linkTo(3)" >经典影片</a >
+				</li >
+			</ul >
+		</section >
+	</nav >
+	
+	<main id = "movies-main" >
+		<section class = "container total-classify" >
+			<div class = "options movie-type" >
+				<div class = "options-left" >
+					类型：
+				</div >
+				<div class = "options-right" >
+					<ul class = "clearfix" >
+						<li ng-repeat = "val in classify.type" >
+							<a href = "javascript:void(0)" ng-class = "{'active': movieType === val.tag}"
+							   ng-click = "linkToTag('type', val.tag)" ng-bind = "val.tag" ></a >
+						</li >
+					</ul >
+				</div >
+			</div >
+			<div class = "options movie-area" >
+				<div class = "options-left" >
+					区域：
+				</div >
+				<div class = "options-right" >
+					<ul class = "clearfix" >
+						<li ng-repeat = "val in classify.area" >
+							<a href = "javascript:void(0)" ng-class = "{'active': movieArea === val.tag}"
+							   ng-click = "linkToTag('area', val.tag)" ng-bind = "val.tag" ></a >
+						</li >
+					</ul >
+				</div >
+			</div >
+			<div class = "options movie-time" >
+				<div class = "options-left" >
+					年代：
+				</div >
+				<div class = "options-right" >
+					<ul class = "clearfix" >
+						<li ng-repeat = "val in classify.time" >
+							<a href = "javascript:void(0)" ng-class = "{'active': movieTime === val.tag}"
+							   ng-click = "linkToTag('time', val.tag)" ng-bind = "val.tag" ></a >
+						</li >
+					</ul >
+				</div >
+			</div >
+		</section >
+		<section class = "container movies-lists" >
+			<div class = "spinner" ng-if = "isLoading" >
+				<div class = "bounce1" ></div >
+				<div class = "bounce2" ></div >
+				<div class = "bounce3" ></div >
+			</div >
+			<div class = "movies" >
+				<ul class = "clearfix" >
+					<li ng-repeat = "val in classify.movies" >
+						<a href = "{{val.alt}}" >
+							<div class = "img" >
+								<img src = "{{val.images.large}}" alt = "{{val.alt}}" >
+							</div >
+							<div class = "info" >
+								<div class = "name" >
+									<a href = "{{val.alt}}" ng-bind = "val.title" ></a >
+								</div >
+								<div class = "average" >
+									{{val.rating.average}}分
+								</div >
+							</div >
+						</a >
+					</li >
+				</ul >
+			</div >
+			<div class = "pages" >
+				<ul>
+				</ul>
+			</div >
+		</section >
+	</main >
+</div >

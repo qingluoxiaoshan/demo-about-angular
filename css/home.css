@@ -1,0 +1,350 @@
+.spinner {
+  margin: 0 auto;
+  padding-top: 100px;
+  text-align: center;
+}
+.spinner > div {
+  width: 30px;
+  height: 30px;
+  background-color: #67CF22;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@-webkit-keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+.slide-show {
+  cursor: pointer;
+  min-width: 1200px;
+  position: relative;
+  margin-bottom: 40px;
+}
+.slide-show .slide-img ul {
+  height: 440px;
+}
+.slide-show .slide-img ul li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #fff no-repeat center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slide-show .slide-img ul li.active {
+  opacity: 1;
+}
+.slide-show .slide-img ul li a {
+  display: block;
+  height: 440px;
+}
+.slide-show .slide-img ul li:nth-of-type(6) {
+  background-image: url("../img/06.jpg");
+}
+.slide-show .slide-img ul li:nth-of-type(5) {
+  background-image: url("../img/05.jpg");
+}
+.slide-show .slide-img ul li:nth-of-type(4) {
+  background-image: url("../img/04.jpg");
+}
+.slide-show .slide-img ul li:nth-of-type(3) {
+  background-image: url("../img/03.jpg");
+}
+.slide-show .slide-img ul li:nth-of-type(2) {
+  background-image: url("../img/02.jpg");
+}
+.slide-show .slide-img ul li:nth-of-type(1) {
+  background-image: url("../img/01.jpg");
+}
+.slide-show .slide-point {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -57px;
+}
+.slide-show .slide-point .points li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #cccccc;
+}
+.slide-show .slide-point .points li.active {
+  background-color: #f00;
+}
+.slide-show .slide-guide .guide {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  margin-top: -50px;
+  width: 50px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #aaa;
+  font-size: 40px;
+  font-family: "SimSun";
+  line-height: 100px;
+}
+.slide-show .slide-guide .guide:hover {
+  color: #ccc;
+}
+.slide-show .slide-guide .guide-left {
+  left: 40px;
+}
+.slide-show .slide-guide .guide-right {
+  right: 40px;
+}
+.movie-main {
+  margin-bottom: 80px;
+}
+.movie-main .container-left {
+  float: left;
+  width: 800px;
+  padding: 0 20px;
+}
+.movie-main .container-left .movies {
+  margin-top: 40px;
+}
+.movie-main .container-left .movies .title {
+  font-size: 24px;
+  line-height: 32px;
+}
+.movie-main .container-left .movies .title .more {
+  font-size: 14px;
+  float: right;
+}
+.movie-main .container-left .movies ul li {
+  float: left;
+  margin: 20px 15px;
+  width: 160px;
+}
+.movie-main .container-left .movies ul li > div {
+  border: 1px solid #efefef;
+}
+.movie-main .container-left .movies ul li > div a {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.movie-main .container-left .movies ul li > div a .img {
+  text-align: center;
+}
+.movie-main .container-left .movies ul li > div a .img img {
+  width: 160px;
+  height: 220px;
+}
+.movie-main .container-left .movies ul li > div a .info {
+  width: 100%;
+  height: 60px;
+  padding-top: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+}
+.movie-main .container-left .movies ul li > div a .info div {
+  color: #fff;
+  padding: 0 5px;
+}
+.movie-main .container-left .movies ul li > div a .info div .name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100px;
+}
+.movie-main .container-left .movies ul li > div a .info div .average {
+  color: #ffb400;
+}
+.movie-main .container-left .movies ul li > div a .info div .average .integer {
+  font-size: 16px;
+}
+.movie-main .container-left .movies ul li > div a .info div .average .float {
+  font-size: 14px;
+}
+.movie-main .container-left .movies ul li:hover {
+  -webkit-box-shadow: 0 0 8px #fff, 0 5px 13px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 8px #fff, 0 5px 13px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px #fff, 0 5px 13px rgba(0, 0, 0, 0.1);
+}
+.movie-main .container-left .movie-now .title,
+.movie-main .container-left .movie-now .title a {
+  color: #ef4238;
+}
+.movie-main .container-left .movie-now .title a:hover,
+.movie-main .container-left .movie-now .title a a:hover {
+  color: #ef4238;
+}
+.movie-main .container-left .movie-now ul li > div .buy {
+  color: #ef4238;
+  height: 41px;
+  line-height: 40px;
+  text-align: center;
+}
+.movie-main .container-left .movie-now ul li > div .buy:hover {
+  background-color: #ef4238;
+  color: #fff;
+}
+.movie-main .container-left .movie-coming .title,
+.movie-main .container-left .movie-coming .title a {
+  color: #2d98f3;
+}
+.movie-main .container-left .movie-coming ul li .buy .expect {
+  font-size: 14px;
+  color: #ffb400;
+  padding-left: 10px;
+  line-height: 34px;
+  height: 34px;
+  background-color: #fbfbfb;
+}
+.movie-main .container-left .movie-coming ul li .buy .presell div {
+  float: left;
+  width: 50%;
+  height: 39px;
+  line-height: 39px;
+  text-align: center;
+}
+.movie-main .container-left .movie-coming ul li .buy .presell div:first-child {
+  color: #999;
+  border-right: 1px dashed #e5e5e5;
+}
+.movie-main .container-left .movie-coming ul li .buy .presell div:last-child a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #2d98f3;
+}
+.movie-main .container-left .movie-coming ul li .buy .presell div:last-child a:hover {
+  background-color: #2d98f3;
+  color: #fff;
+}
+.movie-main .container-left .movie-coming ul .time {
+  font-size: 14px;
+  line-height: 34px;
+  text-align: center;
+  color: #999;
+}
+.movie-main .container-left .movie-hot .title {
+  color: #ef4238;
+}
+.movie-main .container-left .movie-hot .title .classify a {
+  margin-left: 15px;
+}
+.movie-main .container-left .movie-hot .title .more {
+  color: #ef4238;
+}
+.movie-main .container-right {
+  float: right;
+}
+.movie-main .container-right .rinking {
+  width: 360px;
+  margin-top: 40px;
+  margin-bottom: 210px;
+}
+.movie-main .container-right .rinking .title {
+  font-size: 26px;
+  line-height: 34px;
+}
+.movie-main .container-right .rinking .title .more {
+  float: right;
+  font-size: 16px;
+}
+.movie-main .container-right .rinking .list-10 {
+  margin-top: 25px;
+  position: relative;
+}
+.movie-main .container-right .rinking .list-10 > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 78px;
+  z-index: 0;
+}
+.movie-main .container-right .rinking .list-10 .champion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 25px;
+  background: url("../img/first.png") no-repeat;
+  z-index: 0;
+}
+.movie-main .container-right .rinking .list-10 li > a {
+  z-index: 99;
+}
+.movie-main .container-right .rinking .list-10 li .info {
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+}
+.movie-main .container-right .rinking .list-10 li .info .number {
+  display: inline-block;
+  width: 20px;
+  color: #999;
+  vertical-align: top;
+  font-style: italic;
+}
+.movie-main .container-right .rinking .list-10 li .info .point {
+  float: right;
+  margin-right: 20px;
+  color: #ef4238;
+  font-size: 14px;
+}
+.movie-main .container-right .rinking .list-10 li:nth-of-type(-n + 3) .number {
+  color: #ef4238;
+}
+.movie-main .container-right .rinking .list-10 li:first-of-type {
+  margin-bottom: 20px;
+}
+.movie-main .container-right .rinking .list-10 li:first-of-type .info {
+  height: 78px;
+  padding-left: 130px;
+}
+.movie-main .container-right .rinking .list-10 li:first-of-type .info .number {
+  display: none;
+}
+.movie-main .container-right .rinking .list-10 li:first-of-type .info span {
+  display: block;
+  float: none;
+}
+.movie-main .container-right .rinking .list-10 li:first-of-type .info span.name {
+  padding-top: 10px;
+  font-size: 18px;
+}
